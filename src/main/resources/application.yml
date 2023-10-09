@@ -1,0 +1,36 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: email-service
+  output:
+    ansi:
+      enabled: ALWAYS
+  kafka:
+    bootstrap-servers: localhost:19091
+
+  mail:
+    host: smtp.gmail.com
+    username: hidenxtt2001@gmail.com
+    password: "owbn vtxn tflc ebev"
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  cache:
+    type: REDIS
+
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
+
+redis:
+  host: ${REDIS_URL:localhost}
+  port: ${REDIS_PORT:6380}
